@@ -1,0 +1,32 @@
+
+@font-face {
+	font-family: 'OrchideaPro';
+	font-style: normal;
+    font-weight: 500;
+	src: local('OrchideaPro'),
+        url('../fonts/OrchideaPro.ttf') format('ttf')
+}
+
+@font-face {
+	font-family: 'Manrope';
+	font-style: normal;
+    font-weight: 500;
+	src: local('Manrope'),
+        url('../fonts/Manrope.ttf') format('ttf')
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+    font-weight: 500;
+	src: local('Roboto'),
+        url('../fonts/Roboto.ttf') format('ttf')
+}
+
+* {
+    font-family: 'Manrope', sans-serif;
+    color: $app-black-color;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    font-weight: 500;
+}

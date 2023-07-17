@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.slider {
+    margin-top: 160px;
+    margin-left: $app-desktop-indent;
+    &__wrapper {
+        margin-top: 123px;
+        position: relative;
+        height: 490px;
+    }
+    &__image {
+        height: 100%;
+        width: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.swiper-slide {
+    width: 320px;
+    height: 100%;
+}

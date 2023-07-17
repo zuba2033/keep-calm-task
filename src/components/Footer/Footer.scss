@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.footer {
+    height: 200px;
+    background-color: $app-black-color;
+    padding-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    &__text {
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 1;
+    }
+}
