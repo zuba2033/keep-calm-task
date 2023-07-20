@@ -1,12 +1,14 @@
 @import '../../styles/variables.scss';
 
 .slider {
+    user-select: none;
     margin-top: 160px;
-    margin-left: $app-desktop-indent;
+    margin-left: map-get($app-adaptive-indent, max);
     &__wrapper {
         margin-top: 123px;
         position: relative;
         height: 490px;
+        border: none;
     }
     &__image {
         height: 100%;
@@ -22,4 +24,52 @@
 .swiper-slide {
     width: 320px;
     height: 100%;
+}
+
+
+@media (max-width: 1900px) {
+    .slider {
+        margin-top: 80px;
+        margin-left: map-get($app-adaptive-indent, 1900);
+        &__wrapper {
+            margin-top: 60px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .slider {
+        margin-left: map-get($app-adaptive-indent, 1200);
+    }
+}
+
+
+@media (max-width: 990px) {
+    .slider {
+        margin-left: map-get($app-adaptive-indent, 990);
+        margin-top: 70px;
+        &__wrapper {
+            height: 390px;
+            margin-top: 56px;
+        }
+    }
+    .swiper-slide {
+        width: 260px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .slider {
+        margin-left: map-get($app-adaptive-indent, 768);
+        &__title {
+            padding-right: 100px;
+        }
+        &__wrapper {
+            height: 345px;
+        }
+    }
+    .swiper-slide {
+        width: 225px;
+    }
 }

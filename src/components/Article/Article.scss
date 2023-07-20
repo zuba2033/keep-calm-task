@@ -6,6 +6,8 @@
     column-gap: 124px;
     grid-template:  100% / minmax(auto, 862px) minmax(auto, 600px);
     &__image {
+        height: 100%;
+        width: 100%;
         img {
             height: 100%;
             width: 100%;
@@ -18,21 +20,104 @@
         flex-direction: column;
         padding: 5px 0;
         overflow: auto;
-        white-space:pre-line;
+        white-space: pre-line;
         h3 {
             margin-bottom: 5px;
             font-family: Orchidea Pro;
-            font-size: 48px;
+            font-size: map-get($app-title-size, max);
             font-style: normal;
             line-height: 1.1;
             padding-right: 30px;
         }
         p {
             padding-top: 20px;
-            font-size: 18px;
+            font-size: map-get($app-text-size, max);
         }
         &-reverse {
-            padding-left: $app-desktop-indent;
+            padding-left: map-get($app-adaptive-indent, max);
         }
+    }
+}
+
+
+@media (max-width: 1900px) {
+    .article {
+        column-gap: 95px;
+        &__text {
+            padding-right: 20px;
+            &-reverse {
+                padding-right: 0;
+                padding-left: map-get($app-adaptive-indent, 1900);
+            }
+            p {
+                font-size: map-get($app-text-size, 1900);
+            }
+            h3 {
+                font-size: map-get($app-title-size, 1900);
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .article {
+        column-gap: 40px;
+        &__text {
+            &-reverse {
+                padding-left: map-get($app-adaptive-indent, 1200);
+            }
+            p {
+                font-size: map-get($app-text-size, 1200);
+            }
+            h3 {
+                font-size: map-get($app-title-size, 1200);
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .article {
+        grid-template: 360px / 1fr 1fr;
+        column-gap: 30px;
+        &__text {
+            padding-right: map-get($app-adaptive-indent, 990);
+            &-reverse {
+                padding-right: 0;
+                padding-left: map-get($app-adaptive-indent, 990);
+            }
+            p {
+                font-size: map-get($app-text-size, 990);
+            }
+            h3 {
+                font-size: map-get($app-title-size, 990);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .article {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 0;
+        &__image {
+            max-height: 360px;
+        }
+        &-reverse {
+            flex-wrap: wrap-reverse;
+        }
+        &__text {
+            margin-top: 40px;
+            padding: 0 map-get($app-adaptive-indent, 768) 8px;
+            p {
+                font-size: map-get($app-text-size, 768);
+            }
+            h3 {
+                font-size: map-get($app-title-size, 768);
+            }
+        }
+        
     }
 }

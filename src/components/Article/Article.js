@@ -3,15 +3,16 @@ import './Article.scss';
 const Article = (props) => {
 
     const {subtitle, text} = props.articleData;
-    const {reverse, image} = props
+    const {reverse, image, imageMin} = props
 
     return (
-        <article className="article">
+        <>
             {!reverse ? 
-                <>
-                    <figure className="article__image">
-                        <img src={image} alt="article" />
-                    </figure>
+                <article className="article">
+                    <picture className="article__image">
+                        <source srcSet={imageMin} media="(max-width: 480px)" />
+                        <img srcSet={image} alt="article" />
+                    </picture>
                     <div className="article__text" >
                         <h3 >
                             {subtitle}
@@ -20,8 +21,8 @@ const Article = (props) => {
                             {text}
                         </p>
                     </div>
-                </> : 
-                <>
+                </article> : 
+                <article className="article article-reverse">
                     <div className="article__text article__text-reverse">
                         <h3 >
                             {subtitle}
@@ -30,14 +31,15 @@ const Article = (props) => {
                             {text}
                         </p>
                     </div>
-                    <figure className="article__image">
-                        <img src={image} alt="article" />
-                    </figure>
-                </>
+                    <picture className="article__image">
+                        <source srcSet={imageMin} media="(max-width: 480px)" />
+                        <img srcSet={image} alt="article" />
+                    </picture>
+                </article>
                 }
 
 
-        </article>
+        </>
     )
 }
 

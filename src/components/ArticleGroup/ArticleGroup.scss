@@ -4,7 +4,7 @@
     margin-top: 160px;
     max-width: 1588px;
     &__title {
-        padding-left: $app-desktop-indent;
+        padding-left: map-get($app-adaptive-indent, max);
     }
     &__wrapper {
         margin-top: 124px;
@@ -13,6 +13,55 @@
         grid-template: minmax(auto, 481px) minmax(auto, 410px) / 1fr;
         grid-auto-rows: max-content;
         row-gap: 100px;
+    }
+}
+
+@media (max-width: 1900px) {
+    .articleGroup {
+        margin-top: 80px;
+        &__title {
+            padding-left: map-get($app-adaptive-indent, 1900);
+        }
+        &__wrapper {
+            margin-top: 60px;
+            row-gap: 80px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .articleGroup {
+        &__title {
+            padding-left: map-get($app-adaptive-indent, 1200);
+        }
+        &__wrapper {
+            row-gap: 50px;
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .articleGroup {
+        margin-top: 72px;
+        &__title {
+            padding-left: map-get($app-adaptive-indent, 990);
+        }
+        &__wrapper {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 56px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .articleGroup {
+        margin-top: 64px;
+        &__title {
+            padding-right: 70px;
+            padding-left: map-get($app-adaptive-indent, 768);
+        }
     }
 }
     

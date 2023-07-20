@@ -1,6 +1,31 @@
+@import './variables.scss';
 
 .title {
     font-family: OrchideaPro;
     text-transform: uppercase;
-    font-size: 48px;
+    font-size: map-get($app-title-size, max);
+}
+
+@media ( max-width: 1900px) {
+    .title {
+        font-size: map-get($app-title-size, 1900);
+    }
+}
+
+@media ( max-width: 1200px) {
+    .title {
+        font-size: map-get($app-title-size, 1200);
+    }
+}
+
+@media ( max-width: 990px) {
+    .title {
+        font-size: map-get($app-title-size, 990);
+    }
+}
+
+@media ( max-width: 768px) {
+    .title {
+        font-size: map-get($app-title-size, 768);
+    }
 }

@@ -1,6 +1,7 @@
 import './Header.scss';
 
 import { ReactComponent as Logo } from '../../assets/Logo.svg';
+import {ReactComponent as PhoneIcon} from '../../assets/PhoneIcon.svg';
 
 const Header = () => {
     return (
@@ -12,6 +13,7 @@ const Header = () => {
                 </a>
             </div>
             <div className="phone"><a href="tel:+74954954954">+7 (495) 495-49-54</a></div>
+            <div className="phone-icon"><a href="tel:+74954954954"><PhoneIcon/></a></div>
         </header>
     )
 }

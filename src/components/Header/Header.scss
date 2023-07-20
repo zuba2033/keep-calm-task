@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 $app-desktop-indent;
+    padding: 0 map-get($app-adaptive-indent, max);
     height: 100px;
     background: linear-gradient(360deg, #464341 0%, #010101 100%);
     .logo {
@@ -23,5 +23,59 @@
                 text-decoration: underline;
             }
         }
+    }
+    .phone-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 1900px) {
+    .header {
+        padding: 0 map-get($app-adaptive-indent, 1900);
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        height: 80px;
+        padding: 0 map-get($app-adaptive-indent, 1200);
+    }
+}
+
+@media (max-width: 990px) {
+    .header {
+        padding: 0 map-get($app-adaptive-indent, 990);
+        .logo {
+            height: 25px;
+            width: 150px;
+        }
+        .phone {
+            display: none;
+        }
+        .phone-icon {
+            height: 30px;
+            width: 30px;
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        .logo {
+            height: 20px;
+            width: 120px;
+        }
+        .phone-icon {
+            height: 24px;
+            width: 24px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+        padding: 0 map-get($app-adaptive-indent, 768);
     }
 }
